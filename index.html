@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build The News Website</title>
+  <link rel="icon" type="image/x-icon" href="logoTdev.png">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="myCss.css">
+
+  <!-- script jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+  <!-- Script icon -->
+  <script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script>
+  <script  nomodule  src = "https: // unkg .com / ionicons @ 5.5.2 / dist / ionicons / ionicons.js "> </script>
+
+  <!-- script  -->
+  <!-- <script src="main1.js"></script> -->
+  <script src="main.js"></script>
+
+</head>
+<body>
+  <header class="header-container">
+    <h1>My News </h1>
+    <span title="Show Hide box search"><ion-icon name="search-sharp"></ion-icon></span>
+  </header>
+  <div class="hideShow">
+    <form action="#" id="formSearch">
+      <label for="search">Keywords: </label>
+      <div class="simple-search">
+        <input type="text" name="search" id="search" placeholder="Search something..." required>
+        <button type="button"  id="find">Search</button>
+        <button type="button" id="close"><ion-icon name="close-sharp"></ion-icon></button>
+      </div>
+    </form>
+  </div>
+  <div class="loading">
+    <img src="loading.gif" alt=""avc>
+  </div>
+  <ul id="news">
+
+  </ul>
+</body>
+</html>
