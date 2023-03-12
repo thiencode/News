@@ -11,7 +11,18 @@ $(function () {
     $(".hideShow").slideToggle("slow");
     search.value = "";
   });
+  $('#search').keydown(function (event) {
+    if (event.keyCode === 13) {
+      retry();
+      $(".hideShow").slideToggle("slow");
+      search.value = "";
+    }
+  })
 });
+
+var CURRENT_TOP_HEADLINES = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
+var SEARCH_KEYWORD_URL = "https://newsapi.org/v2/everything?q=";
+var API_KEY = "1ac4ec42157d40328159d62152ab684d";
 
 function start() {
   headNews(renderHead);
@@ -21,9 +32,8 @@ start();
 
 //Function headlines
 function headNews(callback) {
-  var headline =
-    "https://gnews.io/api/v4/top-headlines?&token=f9fc38733b26c277f89b911ffbb721ba";
-  fetch(headline)
+  let api = CURRENT_TOP_HEADLINES + API_KEY;
+  fetch(api)
     .then(function (response) {
       return response.json();
     })
@@ -57,10 +67,9 @@ function renderHead(posts) {
 function retry() {
   $(".loading").show();
   var input = document.querySelector("#search");
-  var apiToken = "f9fc38733b26c277f89b911ffbb721ba";
   var keyWords = $(input).val();
   var url =
-    "https://gnews.io/api/v4/search?q=" + keyWords + "&token=" + apiToken;
+    SEARCH_KEYWORD_URL + keyWords + "&apiKey=" + API_KEY;
   fetch(url)
     .then(function (response) {
       return response.json();
