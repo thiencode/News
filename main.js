@@ -1,4 +1,5 @@
-$(function () {
+$(document).ready(function () {
+  start();
   $(".loading").show();
   $(".header-container span").on("click", function () {
     $(".hideShow").slideToggle("slow");
@@ -20,6 +21,28 @@ $(function () {
   })
 });
 
+// $(function () {
+//   $(".loading").show();
+//   $(".header-container span").on("click", function () {
+//     $(".hideShow").slideToggle("slow");
+//   });
+//   $("#close").click(function () {
+//     $(".hideShow").slideToggle("slow");
+//   });
+//   $("#find").click(function () {
+//     retry();
+//     $(".hideShow").slideToggle("slow");
+//     search.value = "";
+//   });
+//   $('#search').keydown(function (event) {
+//     if (event.keyCode === 13) {
+//       retry();
+//       $(".hideShow").slideToggle("slow");
+//       search.value = "";
+//     }
+//   })
+// });
+
 var CURRENT_TOP_HEADLINES = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
 var SEARCH_KEYWORD_URL = "https://newsapi.org/v2/everything?q=";
 var API_KEY = "1ac4ec42157d40328159d62152ab684d";
@@ -28,7 +51,7 @@ function start() {
   headNews(renderHead);
 }
 
-start();
+
 
 //Function headlines
 function headNews(callback) {
